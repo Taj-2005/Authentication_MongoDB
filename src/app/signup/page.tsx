@@ -23,8 +23,9 @@ const SignUp = () => {
             console.log(response.data);
             router.push('/login');
         } catch (err: any) {
-            console.log(err);
-            toast.error(err.response?.data?.message || err.message);
+            console.error(err);
+            const message = err.response?.data?.message || "Signup failed. Try again.";
+            toast.error(message);
         }
     };
     return (
